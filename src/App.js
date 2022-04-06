@@ -1,23 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
+import Home from './Component/Home';
 
 function App() {
+ const data = [
+   {fname:"Jhon",lname:"Doe",city:"alska",country:"Africa"},
+   {fname:"Dull",lname:"Roy",city:"alska",country:"Australiya"},
+   {fname:"Ellan",lname:"Doe",city:"barbadose",country:"Africa"},
+   {fname:"mark",lname:"afarat",city:"alska",country:"japna"},
+   {fname:"evram",lname:"sunny",city:"kington",country:"Africa"},
+   {fname:"omniq",lname:"tuts",city:"alska",country:"Finnland"},
+   {fname:"Jhon",lname:"Doe",city:"alska",country:"Africa"},
+ ]
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Home list={data}/>
     </div>
   );
 }
