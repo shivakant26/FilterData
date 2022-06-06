@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import GoogleMapReact from 'google-map-react';
 import './Home.css';
 const Home = (props) =>{
     const [ searchText , setSerchText ] = useState("");
@@ -49,6 +50,19 @@ const Home = (props) =>{
                     <p>Record Not Found</p>
                 </div>
             }
+             <div style={{ height: '100vh', width: '100%' }}>
+        <GoogleMapReact
+        bootstrapURLKeys={{ key: "" }}
+          defaultCenter={59.14}
+          defaultZoom={30.22}
+        >
+          {/* <AnyReactComponent
+            lat={59.955413}
+            lng={30.337844}
+            text="My Marker"
+          /> */}
+        </GoogleMapReact>
+      </div>
         </div>
     )
 }

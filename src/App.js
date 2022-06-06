@@ -1,7 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
-import Home from './Component/Home';
-
+// import Home from './Component/Home';
+import { lazy, Suspense } from 'react';
+const Home = lazy(()=>import('./Component/Home'))
+const About = lazy(()=>import('./Component/About'))
 function App() {
  const data = [
    {fname:"Jhon",lname:"Doe",city:"alska",country:"Africa"},
@@ -14,7 +16,11 @@ function App() {
  ]
   return (
     <div className="App">
-      <Home list={data}/>
+      <h1>Component is Load</h1>
+      <Suspense fallback={<div>Please wait....</div>}>
+        <Home list={data}/>
+        <About />
+      </Suspense>
     </div>
   );
 }
